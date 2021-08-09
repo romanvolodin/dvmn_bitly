@@ -59,3 +59,4 @@ if __name__ == "__main__":
     except requests.exceptions.HTTPError as err:
         print(err)
         exit("Make sure the url is correct")
+    print(short_link)
