@@ -35,9 +35,7 @@ def is_bitlink(token, link):
         f"{BITLY_API_URL}/bitlinks/{bitlink}",
         headers = {"Authorization": f"Bearer {token}"},
     )
-    if response.ok:
-        return True
-    return False
+    return response.ok
 
 
 if __name__ == "__main__":
