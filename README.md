@@ -40,12 +40,12 @@ python bitly.py
 Примеры вывода:
 ```sh
 $ python bitly.py
-Enter a url: https://dvmn.org/modules/web-api/lesson/bitly/
+Enter an url: https://dvmn.org/modules/web-api/lesson/bitly/
 https://bit.ly/3g6w5Er
 ```
 ```sh
 $ python bitly.py
-Enter a url: https://bit.ly/3g6w5Er
+Enter an url: https://bit.ly/3g6w5Er
 18
 ```
 

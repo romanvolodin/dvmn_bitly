@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
     api_token = env.str("BITLY_TOKEN")
 
-    input_url = input("Enter a url: ").strip()
+    input_url = input("Enter an url: ").strip()
     if not input_url:
         exit("Make sure the url is correct")
 
