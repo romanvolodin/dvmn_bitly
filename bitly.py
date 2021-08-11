@@ -1,3 +1,4 @@
+import argparse
 from urllib.parse import urlparse
 
 import requests
@@ -38,15 +39,23 @@ def is_bitlink(token, link):
     return response.ok
 
 
+def parse_arguments():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        'input_url',
+        help = 'Bitlink or long url to be shortened',
+    )
+    return parser.parse_args()
+
+
 if __name__ == "__main__":
     env = Env()
     env.read_env() 
 
     api_token = env.str("BITLY_TOKEN")
 
-    input_url = input("Enter an url: ").strip()
-    if not input_url:
-        exit("Make sure the url is correct")
+    args = parse_arguments()
+    input_url = args.input_url
 
     if is_bitlink(api_token, input_url):
         print(count_clicks(api_token, input_url))

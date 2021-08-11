@@ -34,18 +34,16 @@ pip install -r requirements.txt
 Запустите скрипт:
 
 ```sh
-python bitly.py
+python bitly.py https://example.com
 ```
 
 Примеры вывода:
 ```sh
-$ python bitly.py
-Enter an url: https://dvmn.org/modules/web-api/lesson/bitly/
+$ python bitly.py https://dvmn.org/modules/web-api/lesson/bitly/
 https://bit.ly/3g6w5Er
 ```
 ```sh
-$ python bitly.py
-Enter an url: https://bit.ly/3g6w5Er
+$ python bitly.py https://bit.ly/3g6w5Er
 18
 ```
 
