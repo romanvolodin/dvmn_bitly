@@ -11,8 +11,8 @@ BITLY_API_URL = "https://api-ssl.bitly.com/v4"
 def shorten_link(headers, url):
     response = requests.post(
         f"{BITLY_API_URL}/shorten",
-        headers = headers,
-        json = {"long_url": url},
+        headers=headers,
+        json={"long_url": url},
     )
     response.raise_for_status()
     return response.json()["link"]
@@ -23,7 +23,7 @@ def count_clicks(headers, link):
     bitlink = f"{parsed_url.netloc}{parsed_url.path}"
     response = requests.get(
         f"{BITLY_API_URL}/bitlinks/{bitlink}/clicks/summary",
-        headers = headers,
+        headers=headers,
     )
     response.raise_for_status()
     return response.json()["total_clicks"]
@@ -34,21 +34,21 @@ def is_bitlink(headers, link):
     bitlink = f"{parsed_url.netloc}{parsed_url.path}"
     response = requests.get(
         f"{BITLY_API_URL}/bitlinks/{bitlink}",
-        headers = headers,
+        headers=headers,
     )
     return response.ok
 
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
-        description = (
+        description=(
             "The script allows you to quickly shorten a long link with Bitly "
             "or get total clicks for a bitlink."
         )
     )
     parser.add_argument(
         "input_url",
-        help = "Bitlink or long url to be shortened",
+        help="Bitlink or long url to be shortened",
     )
     return parser.parse_args()
 
