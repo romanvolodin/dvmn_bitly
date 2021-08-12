@@ -40,7 +40,12 @@ def is_bitlink(token, link):
 
 
 def parse_arguments():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        description = (
+            "The script allows you to quickly shorten a long link with Bitly "
+            "or get total clicks for a bitlink."
+        )
+    )
     parser.add_argument(
         "input_url",
         help = "Bitlink or long url to be shortened",
